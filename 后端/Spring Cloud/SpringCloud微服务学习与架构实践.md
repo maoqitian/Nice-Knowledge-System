@@ -863,16 +863,14 @@ spring:
 
 
 ## 承载技术 
-- 发布：Jenkins
-
-[jenkins持续集成](https://www.maoqitian.com/2019/01/14/jenkins%E6%8C%81%E7%BB%AD%E9%9B%86%E6%88%90/)
-
-- 容器：Docker
-
-
-- 统一出口负载均衡：Nginx
-- 
-
+### 发布：Jenkins
+- 本项目Jenkins相关文章
+## 容器：Docker
+- 本项目相关docker文章
+## 容器管理
+- 本项目k8s相关文章
+## 统一出口负载均衡：Nginx
+- 敬请期待
 
 
 ## 参考链接
