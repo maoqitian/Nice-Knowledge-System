@@ -167,7 +167,7 @@ Kotlin学习(二)之集合、函数定义及调用| 敬请期待|原创
 ## Jcenter
 文章标题 | 状态| 原创、转载
 ---|---|---
-从零开始开源库上传Jcenter | 已完成，未发布|原创
+[从零开始开源库上传Jcenter](https://www.maoqitian.com/2019/09/03/%E5%BC%80%E6%BA%90%E5%BA%93%E4%B8%8A%E4%BC%A0-jcenter/) | 已发布|原创
 
 # 其他
 ## hexo
