@@ -95,7 +95,7 @@ Android 音视频开发学习思路 | [转载地址](https://www.cnblogs.com/ren
 ## k8s
 文章标题 | 状态| 原创、转载
 ---|---|---
-[Kubeadm 部署 Kubernetes 1.14.2 集群目](https://juejin.im/post/5d4145696fb9a06b2a201c47) | 已发布|原创
+[Kubeadm 部署 Kubernetes 1.14.2 集群](https://juejin.im/post/5d4145696fb9a06b2a201c47) | 已发布|原创
 
 ## FastDFS
 文章标题 | 状态| 原创、转载
