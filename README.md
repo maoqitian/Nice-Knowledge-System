@@ -19,7 +19,7 @@
 [从源码角度深入理解Glide4（上）](https://juejin.im/post/5c519ff86fb9a049e2326c98) | 已发布|原创
 [从源码角度深入理解Glide4（下）](https://juejin.im/post/5c6a3a386fb9a049f9131e95) | 已发布|原创
 [Android 学习笔记 Handler机制（源码分析）](https://www.jianshu.com/p/6ceffaa5ebfe) | 已发布|原创
-从源码角度深入理解Dagger2| 敬请期待
+从源码角度深入理解Dagger2| 正在进行
 
 ### 进阶文章
 文章标题 | 状态| 原创、转载
@@ -67,7 +67,7 @@ Android 音视频开发学习思路 | [转载地址](https://www.cnblogs.com/ren
 ## 开源项目
 项目名称 | 版本
 ---|---
-[WanAndroid客户端](https://github.com/maoqitian/MaoWanAndoidClient) | v1.0.3
+[WanAndroid客户端](https://github.com/maoqitian/MaoWanAndoidClient) | v1.0.4
 
 ## Flutter 
 - 敬请期待
@@ -107,7 +107,7 @@ Android 音视频开发学习思路 | [转载地址](https://www.cnblogs.com/ren
 ---|---|---
 [Docker容器学习（一）之Docker安装和启动](https://juejin.im/post/5d68043e6fb9a06ad00583ae) | 已发布|原创
 [Docker容器学习（二）之Docker 命令](https://juejin.im/post/5d78a6126fb9a06aee365c0d) | 已发布|原创
-
+[Docker容器学习（三）之Docker 镜像构建](https://juejin.im/post/5d840043518825491b724826) | 已发布|原创
 ## Nexus
 文章标题 | 状态| 原创、转载
 ---|---|---
