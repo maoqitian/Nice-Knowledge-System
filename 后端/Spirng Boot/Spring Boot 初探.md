@@ -5,7 +5,7 @@
 mvn spring-boot:run
 
 ```
-    ![spring boot 控制台启动方式1](https://github.com/maoqitian/MaoMdPhoto/raw/master/spring%20boot%20%E9%A1%B9%E7%9B%AE%E5%90%AF%E5%8A%A8/spring%20boot%20%E6%8E%A7%E5%88%B6%E5%8F%B0%E5%90%AF%E5%8A%A8%E6%96%B9%E5%BC%8F1.png)  
+![spring boot 控制台启动方式1](https://github.com/maoqitian/MaoMdPhoto/raw/master/spring%20boot%20%E9%A1%B9%E7%9B%AE%E5%90%AF%E5%8A%A8/spring%20boot%20%E6%8E%A7%E5%88%B6%E5%8F%B0%E5%90%AF%E5%8A%A8%E6%96%B9%E5%BC%8F1.png)  
       
       
   - 3.第三种方式同样控制台下使用命令，如图所示
@@ -25,9 +25,9 @@ mvn spring-boot:run
       
 
       ```
-    ![编译spring boot jar 包](https://github.com/maoqitian/MaoMdPhoto/raw/master/spring%20boot%20%E9%A1%B9%E7%9B%AE%E5%90%AF%E5%8A%A8/%E7%BC%96%E8%AF%91spring%20boot%20jar%20%E5%8C%85.png)
-    ![通过命令生成jar包](https://github.com/maoqitian/MaoMdPhoto/raw/master/spring%20boot%20%E9%A1%B9%E7%9B%AE%E5%90%AF%E5%8A%A8/%E9%80%9A%E8%BF%87%E5%91%BD%E4%BB%A4%E7%94%9F%E6%88%90%E7%9A%84%20.jar%E5%8C%85.png)
-    ![通过java命令启动jar文件启动项目](https://github.com/maoqitian/MaoMdPhoto/raw/master/spring%20boot%20%E9%A1%B9%E7%9B%AE%E5%90%AF%E5%8A%A8/%E9%80%9A%E8%BF%87java%E5%91%BD%E4%BB%A4%E5%90%AF%E5%8A%A8jar%E6%96%87%E4%BB%B6%E5%90%AF%E5%8A%A8%E9%A1%B9%E7%9B%AE.png)
+![编译spring boot jar 包](https://github.com/maoqitian/MaoMdPhoto/raw/master/spring%20boot%20%E9%A1%B9%E7%9B%AE%E5%90%AF%E5%8A%A8/%E7%BC%96%E8%AF%91spring%20boot%20jar%20%E5%8C%85.png)
+![通过命令生成jar包](https://github.com/maoqitian/MaoMdPhoto/raw/master/spring%20boot%20%E9%A1%B9%E7%9B%AE%E5%90%AF%E5%8A%A8/%E9%80%9A%E8%BF%87%E5%91%BD%E4%BB%A4%E7%94%9F%E6%88%90%E7%9A%84%20.jar%E5%8C%85.png)
+![通过java命令启动jar文件启动项目](https://github.com/maoqitian/MaoMdPhoto/raw/master/spring%20boot%20%E9%A1%B9%E7%9B%AE%E5%90%AF%E5%8A%A8/%E9%80%9A%E8%BF%87java%E5%91%BD%E4%BB%A4%E5%90%AF%E5%8A%A8jar%E6%96%87%E4%BB%B6%E5%90%AF%E5%8A%A8%E9%A1%B9%E7%9B%AE.png)
     
     
     
