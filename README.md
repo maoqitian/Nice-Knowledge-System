@@ -72,8 +72,8 @@ Android 音视频开发学习思路 | [转载地址](https://www.cnblogs.com/ren
 ## Flutter 
 文章标题 | 状态| 原创、转载
 ---|---|---
-Flutter 初探(一)环境搭建| 正在进行|
-Flutter 初探(二)Flutter基础和Dart语言| 正在进行|
+[Flutter 与 Dart 语法初探](https://juejin.im/post/5ddd3d5a5188256ee66bf67a)| 已完成|原创
+[Flutter 数据共享 InheritedWidget](https://juejin.im/post/5ddd3def5188256ea364ef9c)|  已完成|原创
 
 ## Gradle
 - 敬请期待
