@@ -18,7 +18,7 @@
 [从源码角度深入理解Retrofit2](https://juejin.im/post/5c0fbcf6518825642650b875) | 已发布|原创
 [从源码角度深入理解Glide4（上）](https://juejin.im/post/5c519ff86fb9a049e2326c98) | 已发布|原创
 [从源码角度深入理解Glide4（下）](https://juejin.im/post/5c6a3a386fb9a049f9131e95) | 已发布|原创
-[Android 学习笔记 Handler机制（源码分析）](https://www.jianshu.com/p/6ceffaa5ebfe) | 已发布|原创
+[重看 Android 消息机制](https://juejin.im/post/5dfdd10fe51d4557e76a6cb9) | 已发布|原创
 从源码角度深入理解Dagger2| 正在进行
 
 ### 进阶文章
