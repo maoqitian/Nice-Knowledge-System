@@ -67,7 +67,7 @@ Android 音视频开发学习思路 | [转载地址](https://www.cnblogs.com/ren
 ## 开源项目
 项目名称 | 版本
 ---|---
-[flutter-wanandroid](https://github.com/maoqitian/flutter_wanandroid) | v1.0.1
+[flutter-wanandroid](https://github.com/maoqitian/flutter_wanandroid) | v1.0.3
 [WanAndroid客户端 Java](https://github.com/maoqitian/MaoWanAndoidClient) | v1.0.5
 
 ## Flutter 
