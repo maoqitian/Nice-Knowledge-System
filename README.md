@@ -1,5 +1,5 @@
 # 个人知识体系总结与分享
-> 平时开发中主要工作是Android开发，根据目前互联网环境的趋势，在专注Android开发领域的同时，作为一名开发者也应拓展自己的知识面，更好的适应公司需求开发，所以创建本库，让自己更好的自律，总结个人成长知识体系与分享，同时也收集一些有价值文章，每天进步一点点，Passion，Self-regulation，Love and Share。
+> Passion，Self-regulation，Love and Share。
 
 # Android 
 
@@ -10,7 +10,16 @@
 [Android 基本架构之MVP分析与实践](https://juejin.im/post/5d680af66fb9a06af92bb780) | 已发布|原创
 
 ## Android 进阶
-### 源码解析
+
+### Android源码解析
+
+#### 四大组件
+文章标题 | 状态| 原创、转载
+---|---|---
+[深入理解Android 之 Activity启动流程（Android 10）](https://juejin.im/post/5e8407d251882573be11b63c)| 已发布|原创
+
+
+### 三方库源码解析
 
 文章标题 | 状态| 原创、转载
 ---|---|---
