@@ -68,7 +68,6 @@ Android 音视频开发学习思路 | [转载地址](https://www.cnblogs.com/ren
 [Android Studio Apk 打包 混淆](https://www.jianshu.com/p/f140a967b789) | 已发布|原创
 [Android 开发 Activity的生命周期、启动模式和IntentFilter匹配规则](https://www.jianshu.com/p/5560e24c954c)| 已发布|原创
 [Android运行时权限机制解析](https://juejin.im/post/5b9e08e86fb9a05cf7158591)| 已发布|原创
-[Android运行时权限机制解析](https://juejin.im/post/5b9e08e86fb9a05cf7158591)| 已发布|原创
 [仿斗鱼直播后台播放功能实现](https://www.maoqitian.com/2019/01/25/%E4%BB%BF%E6%96%97%E9%B1%BC%E7%9B%B4%E6%92%AD%E5%90%8E%E5%8F%B0%E6%92%AD%E6%94%BE%E5%8A%9F%E8%83%BD%E5%AE%9E%E7%8E%B0/)| 已发布|原创
 [Rxjava2.0+Retrofit2.0 封装](https://github.com/maoqitian/Nice-Knowledge-System/blob/master/Android/Android%20%E5%BC%80%E5%8F%91/Rxjava2.0%2BRetrofit2.0%20%E5%B0%81%E8%A3%85.md)| 已完成|原创
 [自定义 behavior FloatingActionButton 滑动显示与隐藏](https://github.com/maoqitian/Nice-Knowledge-System/blob/master/Android/Android%20%E5%BC%80%E5%8F%91/%E8%87%AA%E5%AE%9A%E4%B9%89%20behavior%20FloatingActionButton%20%E6%BB%91%E5%8A%A8%E6%98%BE%E7%A4%BA%E4%B8%8E%E9%9A%90%E8%97%8F.md)| 已完成|原创
