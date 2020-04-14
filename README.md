@@ -3,12 +3,6 @@
 
 # Android 
 
-## Android 架构
-
-文章标题 | 状态| 原创、转载
----|---|---
-[Android 基本架构之MVP分析与实践](https://juejin.im/post/5d680af66fb9a06af92bb780) | 已发布|原创
-
 ## Android 进阶
 
 ### Android源码解析
@@ -16,8 +10,19 @@
 #### 四大组件
 文章标题 | 状态| 原创、转载
 ---|---|---
-[深入理解Android 之 Activity启动流程（Android 10）](https://juejin.im/post/5e8407d251882573be11b63c)| 已发布|原创
+[深入理解Android 之 Activity启动流程（Android 10）](https://github.com/maoqitian/Nice-Knowledge-System/blob/master/AndroidFramework%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90/Activity%E5%90%AF%E5%8A%A8/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3Android%20%E4%B9%8B%20Activity%E5%90%AF%E5%8A%A8%E6%B5%81%E7%A8%8B%EF%BC%88Android%2010%EF%BC%89.md)| 已发布|原创
+[深入理解Android之应用程序进程启动流程(Android 10)）](https://github.com/maoqitian/Nice-Knowledge-System/blob/master/AndroidFramework%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90/%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E8%BF%9B%E7%A8%8B%E5%90%AF%E5%8A%A8/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3Android%E4%B9%8B%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E8%BF%9B%E7%A8%8B%E5%90%AF%E5%8A%A8%E6%B5%81%E7%A8%8B(Android%2010).md)| 已发布|原创
 
+#### 消息机制
+文章标题 | 状态| 原创、转载
+---|---|---
+[重看 Android 消息机制](https://github.com/maoqitian/Nice-Knowledge-System/blob/master/AndroidFramework%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90/Handler%20%E6%B6%88%E6%81%AF%E6%9C%BA%E5%88%B6/%E9%87%8D%E7%9C%8B%20Android%20%E6%B6%88%E6%81%AF%E6%9C%BA%E5%88%B6.md)| 已发布|原创
+
+## Android 架构
+
+文章标题 | 状态| 原创、转载
+---|---|---
+[Android 基本架构之MVP分析与实践](https://juejin.im/post/5d680af66fb9a06af92bb780) | 已发布|原创
 
 ### 三方库源码解析
 
