@@ -1,4 +1,5 @@
-> 在上一篇文章[深入理解Android 之 Activity启动流程](https://juejin.im/post/5e8407d251882573be11b63c)中，应用程序根Activity的启动过程通过系统源码梳理了一遍，其中还有一个细节便是Android每个应用都是都是一个应用进程，而应用进程不会凭空产生，本文则通过系统源码继续探究Android应用程序进程启动流程（文中源码基于Android 10 ）。
+# 深入理解Android之应用程序进程启动流程(Android 10)
+> 在上一篇文章[深入理解Android 之 Activity启动流程](https://github.com/maoqitian/Nice-Knowledge-System/blob/master/AndroidFramework%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90/Activity%E5%90%AF%E5%8A%A8/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3Android%20%E4%B9%8B%20Activity%E5%90%AF%E5%8A%A8%E6%B5%81%E7%A8%8B%EF%BC%88Android%2010%EF%BC%89.md)中，应用程序根Activity的启动过程通过系统源码梳理了一遍，其中还有一个细节便是Android每个应用都是都是一个应用进程，而应用进程不会凭空产生，本文则通过系统源码继续探究Android应用程序进程启动流程（文中源码基于Android 10 ）。
 
 - [Android源码地址](https://cs.android.com/android/platform/superproject/+/android-10.0.0_r30:)
 
@@ -725,7 +726,7 @@ protected static Runnable applicationInit(int targetSdkVersion, String[] argv,
 
 ### 启动过程涉及的进程
 
-- 结合上一篇文章[深入理解Android 之 Activity启动流程](https://juejin.im/post/5e8407d251882573be11b63c)，总结出如下应用程序进程启动涉及的几个进程间调用的关系图
+- 结合上一篇文章[深入理解Android 之 Activity启动流程](https://github.com/maoqitian/Nice-Knowledge-System/blob/master/AndroidFramework%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90/Activity%E5%90%AF%E5%8A%A8/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3Android%20%E4%B9%8B%20Activity%E5%90%AF%E5%8A%A8%E6%B5%81%E7%A8%8B%EF%BC%88Android%2010%EF%BC%89.md)，总结出如下应用程序进程启动涉及的几个进程间调用的关系图
 
 ![image](https://github.com/maoqitian/MaoMdPhoto/raw/master/Android%E7%B3%BB%E7%BB%9F%E5%90%AF%E5%8A%A8%E6%B5%81%E7%A8%8B/%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E5%90%AF%E5%8A%A8%E8%BF%87%E7%A8%8B%E5%90%84%E4%B8%AA%E8%BF%9B%E7%A8%8B%E9%97%B4%E8%B0%83%E7%94%A8%E5%85%B3%E7%B3%BB%E5%9B%BE.jpg)
 
