@@ -1,3 +1,4 @@
+# 深入理解Android 之 Activity启动流程（Android 10）
 > 在进阶Android的路上，了解理解一个应用根Activity启动流程可以作为一个切入点，由此展开进阶之路。平时我们开发的应用都是展示在Android系统桌面上，这个系统桌面其实也是一个Android应用，它叫Launcher。所以本文通过源码层面从Launcher调用ATMS，ATMS调用ApplicationThread，最后ActivityThread启动Activity三个过程了解Activity启动流程（文中源码基于Android 10 ）。
 
 - [Android源码地址](https://cs.android.com/android/platform/superproject/+/android-10.0.0_r30:)
