@@ -1,3 +1,4 @@
+# 重看 Android 消息机制
 > 谈起Android 消息机制，相信各位会首先想到Handler，Handler是Android 提供给给开发者实现线程间通信的工具。Android的消息机制包含四大内容，ThreadLocal保证每个线程都有自己的消息轮询器Looper，MessageQueue用来存放消息，Looper负责取消息，最后Handler负责消息的发送与消息的处理。
 
 - 先来一张脑图回顾整体知识
