@@ -387,9 +387,6 @@ private void handleCreateService(CreateServiceData data) {
 
 ![image](https://github.com/maoqitian/MaoMdPhoto/raw/master/Android%20%E5%9B%9B%E5%A4%A7%E7%BB%84%E4%BB%B6%E5%90%AF%E5%8A%A8%E6%B5%81%E7%A8%8B/Service/startService/ActivityThread%E5%90%AF%E5%8A%A8Service%E7%BB%84%E4%BB%B6(startService).jpg)
 
-## 最后
-
-- 到此，Service组件启动过程源码就分析完了，接下来还会继续分析Service组件绑定过程，敬请期待。如果文章中有写得不对的地方，欢迎在留言区留言大家一起讨论，共同学习进步。如果觉得我的文章给予你帮助，也请给我一个喜欢和关注。
 ### 参考
 - 书籍《Android 系统情景源代码分析》第三版
 - [Android 10 源码地址](https://cs.android.com/android/platform/superproject/+/android-10.0.0_r30:)
