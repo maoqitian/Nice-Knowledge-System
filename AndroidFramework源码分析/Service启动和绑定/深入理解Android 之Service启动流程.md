@@ -1,6 +1,5 @@
+# 深入理解Android 之Service启动流程
 > Service 是一种可在后台执行长时间运行操作而不提供界面的应用组件。服务可由其他应用组件启动，而且即使用户切换到其他应用，服务仍将在后台继续运行。此外，组件可通过绑定到服务与之进行交互，甚至是执行进程间通信 (IPC)(截取自官文文档)。服务启动方式有两种，分别是startService和bindService，接下来通过分析源码了解服务启动过程。（本文源码基于[Android 10](https://cs.android.com/android/platform/superproject/+/android-10.0.0_r30:) ）
-
-
 
 ## Activity启动服务调用到ActivityManagerService过程
 
