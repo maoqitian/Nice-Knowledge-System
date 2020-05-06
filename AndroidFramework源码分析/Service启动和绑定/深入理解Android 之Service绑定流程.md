@@ -456,7 +456,7 @@ public AppBindRecord retrieveAppBindingLocked(Intent intent,
 
 3. 接着回看前一个步骤ActiveServices的bindServiceLocked方法注释6，此时又把AppBindRecord、描述Activity组件的ActivityServiceConnectionsHolder和IServiceConnection封装成了代表Activity组件与远程服务ServiceRecord建立了连接，描述对象为ConnectionRecord，前面也说过服务绑定是一对多关系，所以服务也能被多个Activity绑定，也就是会有多个ConnectionRecord对象，这里就将它们全部放入ArrayList保存，也就是注释7处的**clist**，并且以IServiceConnection引用为key，值为ArrayList保存到AMS的ArrayMap中保存，也就是**mServiceConnections**，以待后续服务启动回调绑定
 
-### 绑定 Service 的启动
+### 远程 Service 进程fork
 
 - 接着前一个步骤ActiveServices的bindServiceLocked方法注释8，根据之前的分析，绑定服务设置的flag为BIND_AUTO_CREATE，所以该判断条件成立，则调用bringUpServiceLocked方法。(ActiveServices的bindServiceLocked方法注释10将在下一小节继续分析)
 > frameworks/base/services/core/java/com/android/server/am/ActiveServices.java
@@ -513,10 +513,108 @@ private String bringUpServiceLocked(ServiceRecord r, int intentFlags, boolean ex
         } //4
     }
 ```
-- 如以上源码，文章开头例子使用的远程服务，也就是服务启动进程与Activity进程不同，所以会在注释2处获取启动进程描述对象HostingRecord，如果没有启动，则通过注释3处调用ActivitManagerService.startProcessLocked启动Service 进程，并在注释4处保存需要启动的服务描述ServiceRecord，进程启动fork Zygote可查看前面文章（[深入理解Android之应用程序进程启动](https://juejin.im/post/5e8de292e51d4546e64c6646)），而如果进程以及存在，则调用注释1处的realStartServiceLocked，之后启动Service 过程和上一篇文章[深入理解Android 之Service启动流程](https://note.youdao.com/)基本相同，最终调用到 Service 的 **OnCreate**方法，这里不再进行展开。
+- 如以上源码，文章开头例子使用的远程服务，也就是服务启动进程与Activity进程不同，所以会在注释2处获取启动进程描述对象HostingRecord，如果没有启动，则通过注释3处调用ActivitManagerService.startProcessLocked启动Service 进程，并在注释4处保存需要启动的服务描述ServiceRecord，进程启动fork Zygote进程可查看前面文章（[深入理解Android之应用程序进程启动](https://juejin.im/post/5e8de292e51d4546e64c6646)），应用进程fork成功后会调用应用程序进程的**ActivityThread的main**方法，最后注释4会把待启动的Service描述ServiceRecord保存到**mPendingServices(ArrayList)**，以便后续应用进程启动后使用，接着看到ActivityThread的main方法。
+
+>frameworks/base/core/java/android/app/ActivityThread.java 
+```
+public static void main(String[] args) {
+      ........
+        ActivityThread thread = new ActivityThread();
+        thread.attach(false, startSeq);//1
+
+      .......
+    }
+    
+private void attach(boolean system, long startSeq) {
+        sCurrentActivityThread = this;
+        mSystemThread = system;
+        if (!system) {
+            android.ddm.DdmHandleAppName.setAppName("<pre-initialized>",
+                                                    UserHandle.myUserId());
+            RuntimeInit.setApplicationObject(mAppThread.asBinder());
+            final IActivityManager mgr = ActivityManager.getService(); //2
+            try {
+                mgr.attachApplication(mAppThread, startSeq); //3
+            } catch (RemoteException ex) {
+                throw ex.rethrowFromSystemServer();
+            }
+           .......
+    }    
+```
+
+- 由以上源码1，首先创建了ActivityThread对象，并调用了ActivityThread的私有方法attach，在该方法中注释2应该很熟悉，获取了与AMS进行binder通信的本地引用，然后注释3处调用AMS的attachApplication与AMS进行通信，接着往下看到AMS的attachApplication方法。
+>frameworks/base/services/core/java/com/android/server/am/ActivityManagerService.java
+
+```
+@Override
+    public final void attachApplication(IApplicationThread thread, long startSeq) {
+        synchronized (this) {
+            attachApplicationLocked(thread, callingPid, callingUid, startSeq);//1
+            Binder.restoreCallingIdentity(origId);
+        }
+    }
+```
+- 由以上源码注释1处ActivityManagerService继续调用了attachApplicationLocked，接着往下看
+
+>frameworks/base/services/core/java/com/android/server/am/ActivityManagerService.java
+
+```
+ @GuardedBy("this")
+    private final boolean attachApplicationLocked(IApplicationThread thread,
+            int pid, int callingUid, long startSeq) {
+        
+        .....
+         // Find any services that should be running in this process...
+        if (!badApp) {
+            try {
+                didSomething |= mServices.attachApplicationLocked(app, processName);
+                checkTime(startTime, "attachApplicationLocked: after mServices.attachApplicationLocked");
+            } catch (Exception e) {
+                ....
+            }
+        }
+        ......
+}
+```
+- 由以上源码，attachApplicationLocked方法本身逻辑是很多的，这里先忽略大部分不是本文分析的代码，直接看到注释1处，从因为注释也可以看出是找到应该在此进程中运行的任何服务，从而调用了ActiveServices的attachApplicationLocked方法，接着往下看。
+
+### 远程Service组件创建
+
+>frameworks/base/services/core/java/com/android/server/am/ActiveServices.java
+```
+boolean attachApplicationLocked(ProcessRecord proc, String processName)
+            throws RemoteException {
+        boolean didSomething = false;
+        // Collect any services that are waiting for this process to come up.
+        if (mPendingServices.size() > 0) {
+            ServiceRecord sr = null;
+            try {
+                for (int i=0; i<mPendingServices.size(); i++) {
+                    sr = mPendingServices.get(i); //1
+                    if (proc != sr.isolatedProc && (proc.uid != sr.appInfo.uid
+                            || !processName.equals(sr.processName))) {
+                        continue;
+                    }
+
+                    mPendingServices.remove(i);
+                    i--;
+                    proc.addPackage(sr.appInfo.packageName, sr.appInfo.longVersionCode,
+                            mAm.mProcessStats);
+                    realStartServiceLocked(sr, proc, sr.createdFromFg);//2
+                    didSomething = true;
+                    .........
+                }
+            } catch (RemoteException e) {
+               ......
+            }
+        }
+        .....
+    }
+```
+- 由以上源码注释1，遍历之前保存待启动Service组件的**mPendingServices(ArrayList)**集合，获取ServiceRecord，注释2处调用realStartServiceLocked方法，之后启动Service 过程和上一篇文章[深入理解Android 之Service启动流程](https://github.com/maoqitian/Nice-Knowledge-System/blob/master/AndroidFramework%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90/Service%E5%90%AF%E5%8A%A8%E5%92%8C%E7%BB%91%E5%AE%9A/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3Android%20%E4%B9%8BService%E5%90%AF%E5%8A%A8%E6%B5%81%E7%A8%8B.md)基本相同，最终调用到 Service 的 **OnCreate**方法完成Service组件启动创建，这里不再进行展开。
 
 ### AMS 到 ActivityThread 启动绑定 Service 过程时序图
-![image](https://github.com/maoqitian/MaoMdPhoto/raw/master/Android%20%E5%9B%9B%E5%A4%A7%E7%BB%84%E4%BB%B6%E5%90%AF%E5%8A%A8%E6%B5%81%E7%A8%8B/Service/bindService/AMS%E5%88%B0ActivityThread%20%E5%90%AF%E5%8A%A8%E7%BB%91%E5%AE%9AService%E7%BB%84%E4%BB%B6%E8%BF%87%E7%A8%8B%E6%97%B6%E5%BA%8F%E5%9B%BE.jpg)
+![image](https://github.com/maoqitian/MaoMdPhoto/raw/master/Android%20%E5%9B%9B%E5%A4%A7%E7%BB%84%E4%BB%B6%E5%90%AF%E5%8A%A8%E6%B5%81%E7%A8%8B/Service/bindService/AMS%E5%88%B0ActivityThread%20%E5%90%AF%E5%8A%A8%E7%BB%91%E5%AE%9AService%E7%BB%84%E4%BB%B6%E8%BF%87%E7%A8%8B%E6%97%B6%E5%BA%8F%E5%9B%BE1.jpg)
 
 ## 绑定Service组件的Activity组件的ServiceConnection回调
 
@@ -800,16 +898,16 @@ private final class RunConnection implements Runnable {
 
 ### 绑定Service组件的Activity组件的ServiceConnection回调时序图   
 
-![image](https://github.com/maoqitian/MaoMdPhoto/raw/master/Android%20%E5%9B%9B%E5%A4%A7%E7%BB%84%E4%BB%B6%E5%90%AF%E5%8A%A8%E6%B5%81%E7%A8%8B/Service/bindService/%E7%BB%91%E5%AE%9AService%E7%BB%84%E4%BB%B6%E7%9A%84Activity%E7%BB%84%E4%BB%B6%E7%9A%84ServiceConnection%E5%9B%9E%E8%B0%83%E6%97%B6%E5%BA%8F%E5%9B%BE.jpg   )
+![image](https://github.com/maoqitian/MaoMdPhoto/raw/master/Android%20%E5%9B%9B%E5%A4%A7%E7%BB%84%E4%BB%B6%E5%90%AF%E5%8A%A8%E6%B5%81%E7%A8%8B/Service/bindService/%E7%BB%91%E5%AE%9AService%E7%BB%84%E4%BB%B6%E7%9A%84Activity%E7%BB%84%E4%BB%B6%E7%9A%84ServiceConnection%E5%9B%9E%E8%B0%83%E6%97%B6%E5%BA%8F%E5%9B%BE.jpg)
 
 
 ## 总结
 
-![image](https://github.com/maoqitian/MaoMdPhoto/raw/master/Android%20%E5%9B%9B%E5%A4%A7%E7%BB%84%E4%BB%B6%E5%90%AF%E5%8A%A8%E6%B5%81%E7%A8%8B/Service/bindService/Service%E7%BB%91%E5%AE%9A%E8%BF%87%E7%A8%8B%E5%90%84%E4%B8%AA%E8%BF%9B%E7%A8%8B%E9%97%B4%E8%B0%83%E7%94%A8%E5%85%B3%E7%B3%BB%E5%9B%BE.jpg)
+![image](https://github.com/maoqitian/MaoMdPhoto/raw/master/Android%20%E5%9B%9B%E5%A4%A7%E7%BB%84%E4%BB%B6%E5%90%AF%E5%8A%A8%E6%B5%81%E7%A8%8B/Service/bindService/Service%E7%BB%91%E5%AE%9A%E8%BF%87%E7%A8%8B%E5%90%84%E4%B8%AA%E8%BF%9B%E7%A8%8B%E9%97%B4%E8%B0%83%E7%94%A8%E5%85%B3%E7%B3%BB%E5%9B%BE1.jpg)
 
 ## 最后
 
-- 经过分析，服务绑定过程还是步骤比较多的，在阅读源码的过程中也发现服务绑定流程方法调用顺序和Demo顺序是一样的。
+- 经过分析，服务绑定过程还是步骤比较多的，需要一些耐心，在阅读源码的过程中也能清晰看到服务绑定流程方法调用顺序和文章开头Demo执行顺序是一样的。
 
 ### 参考
 - 书籍《Android 系统情景源代码分析》第三版
