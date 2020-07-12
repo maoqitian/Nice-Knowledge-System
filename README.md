@@ -185,9 +185,10 @@ Kotlin学习(二)之集合、函数定义及调用| 敬请期待|原创
 - 依赖倒置原则
 - 接口隔离原则
 - 达米特原则
+
 文章标题 | 状态| 原创、转载
 ---|---|---
-[代理模式](https://github.com/maoqitian/Nice-Knowledge-System/blob/master/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/flutter/Dart%20%E8%AF%AD%E6%B3%95%E5%88%9D%E6%8E%A2.md) | 已完成 |原创
+[代理模式](https://github.com/maoqitian/Nice-Knowledge-System/blob/master/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/%E4%BB%A3%E7%90%86%E6%A8%A1%E5%BC%8F.md) | 已完成 |原创
 
 
 
