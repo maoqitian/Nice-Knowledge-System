@@ -49,6 +49,8 @@
 文章标题 | 传送门| 原创、转载
 ---|---|---
 Android 音视频开发学习思路 | [转载地址](https://www.cnblogs.com/renhui/p/7452572.html)|转载
+[ijkplayer 编译与使用(Mac环境)](https://github.com/maoqitian/Nice-Knowledge-System/blob/master/Android/Android%20%E5%BC%80%E5%8F%91/ijkplayer/ijkplayer%20%E7%BC%96%E8%AF%91%E4%B8%8E%E4%BD%BF%E7%94%A8(Mac%E7%8E%AF%E5%A2%83).md) | 已发布|原创
+
 
 ## NDK JNI 学习
 
