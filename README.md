@@ -17,6 +17,12 @@
 [深入理解 Android 之 BroadcastReceiver](https://github.com/maoqitian/Nice-Knowledge-System/blob/master/AndroidFramework%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90/BroadcastReceiver/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3Android%E4%B9%8B%20BroadcastReceiver.md)| 已发布|原创
 [深入理解 Android 之 ContentProvider](https://github.com/maoqitian/Nice-Knowledge-System/blob/master/AndroidFramework%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90/ContentProvider/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3Android%E4%B9%8B%20ContentProvider.md)| 已发布|原创
 
+#### Android 视图层(View)
+文章标题 | 状态| 原创、转载
+---|---|---
+[Window WindowManager Activity 之间联系](https://github.com/maoqitian/Nice-Knowledge-System/blob/master/AndroidFramework%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90/Activity%E5%90%AF%E5%8A%A8/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3Android%20%E4%B9%8B%20Activity%E5%90%AF%E5%8A%A8%E6%B5%81%E7%A8%8B%EF%BC%88Android%2010%EF%BC%89.md)| 已发布|原创
+
+
 #### 消息机制
 文章标题 | 状态| 原创、转载
 ---|---|---
