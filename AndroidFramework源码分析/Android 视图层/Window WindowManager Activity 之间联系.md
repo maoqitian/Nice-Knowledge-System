@@ -1,4 +1,4 @@
-
+# Window WindowManager Activity 之间联系
 ## Window 三种类型
 - 承载 Activity
 - 承载当个窗口(Dialog)
