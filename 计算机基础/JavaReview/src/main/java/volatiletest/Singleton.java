@@ -1,4 +1,4 @@
-package volatileTest;
+package volatiletest;
 
 /**
  * @Description: 双重效验锁单例
