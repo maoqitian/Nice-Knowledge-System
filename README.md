@@ -21,7 +21,8 @@
 文章标题 | 状态| 原创、转载
 ---|---|---
 [Window WindowManager Activity 之间联系](https://github.com/maoqitian/Nice-Knowledge-System/blob/master/AndroidFramework%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90/Android%20%E8%A7%86%E5%9B%BE%E5%B1%82/Window%20WindowManager%20Activity%20%E4%B9%8B%E9%97%B4%E8%81%94%E7%B3%BB.md)| 已发布|原创
-
+[深入理解Android事件分发机制](https://juejin.im/post/5bcbf82fe51d450f0a5a378c)| 已发布|原创
+[Android View 的滑动方式](https://juejin.im/post/5be2f7ab51882517165d813c) | 已发布|原创
 
 #### 消息机制
 文章标题 | 状态| 原创、转载
@@ -43,11 +44,9 @@
 [从源码角度深入理解Glide4（上）](https://juejin.im/post/5c519ff86fb9a049e2326c98) | 已发布|原创
 [从源码角度深入理解Glide4（下）](https://juejin.im/post/5c6a3a386fb9a049f9131e95) | 已发布|原创
 
-### 进阶文章
+## 源码编译
 文章标题 | 状态| 原创、转载
 ---|---|---
-[深入理解Android事件分发机制](https://juejin.im/post/5bcbf82fe51d450f0a5a378c)| 已发布|原创
-[Android View 的滑动方式](https://juejin.im/post/5be2f7ab51882517165d813c) | 已发布|原创
 [Ubuntu 18.04（虚拟机）环境下编译Android 源码](https://juejin.im/post/5b0e591451882515662234cd)| 已发布|原创
 
 ## Android音视频
@@ -103,6 +102,13 @@ Android 音视频开发学习思路 | [转载地址](https://www.cnblogs.com/ren
 
 ## Gradle
 - 敬请期待
+
+## Java进阶
+
+文章标题 | 状态| 原创、转载
+---|---|---
+[重新认识Java字节码](https://github.com/maoqitian/Nice-Knowledge-System/blob/master/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/Java/%E9%87%8D%E6%96%B0%E8%AE%A4%E8%AF%86Java%E5%AD%97%E8%8A%82%E7%A0%81.md)| 已完成|原创
+[Java多线程核心知识点进阶](https://github.com/maoqitian/Nice-Knowledge-System/blob/master/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/Java/Java%E5%A4%9A%E7%BA%BF%E7%A8%8B%E6%A0%B8%E5%BF%83%E7%9F%A5%E8%AF%86%E7%82%B9%E8%BF%9B%E9%98%B6.md)| 已完成|原创
 
 # 后端
 
