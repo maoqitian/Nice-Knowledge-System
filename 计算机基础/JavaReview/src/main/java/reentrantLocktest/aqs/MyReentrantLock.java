@@ -1,4 +1,4 @@
-package reentrantLocktest;
+package reentrantLocktest.aqs;
 
 import java.util.concurrent.locks.AbstractQueuedSynchronizer;
 
