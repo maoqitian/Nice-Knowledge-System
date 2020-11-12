@@ -17,13 +17,13 @@ fun main() {
 
 
       //顶层作用域 不会等待作用域中代码运行完就结束
-      /*GlobalScope.launch {
+    /*  GlobalScope.launch {
           println("GlobalScope hello kotlin")
-          delay(1500)
-      }
+          delay(5000)
+      }*/
 
       //会等待作用域代码执行完成才结束（在测试环境运行，正式环境会产生性能问题）
-      runBlocking {
+     /* runBlocking {
           println("runBlocking hello kotlin")
       }*/
 

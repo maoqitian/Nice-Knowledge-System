@@ -38,9 +38,9 @@ class ReentrantLockTest2 {
             }
             for(int i=0;i<2;i++){
                 //每个线程同时获取释放两次锁
-                lock.lock();
+                fairlock.lock();
                 System.out.println("获得锁的线程："+id);
-                lock.unlock();
+                fairlock.unlock();
             }
         }
     }

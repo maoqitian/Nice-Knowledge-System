@@ -23,7 +23,7 @@ import java.util.concurrent.locks.ReentrantLock;
         //先获取 2 后获取 1
         new Thread(new ThreadDemo(lock2,lock1)).start();
         //中断退出死锁 如果没有中断 则资源互相抢占 死锁
-        t1.interrupt();
+        //t1.interrupt();
     }
 
     static class ThreadDemo implements Runnable {

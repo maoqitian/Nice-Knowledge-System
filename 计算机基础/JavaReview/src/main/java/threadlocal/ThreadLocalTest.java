@@ -1,11 +1,15 @@
 package threadlocal;
 
+import java.util.concurrent.ThreadPoolExecutor;
+
 /**
  * @Description: ThreadLocal 测试
  * @Author: maoqitian
  * @CreateDate: 2020/10/29 23:21
  */
 public class ThreadLocalTest {
+
+
 
         static ThreadLocal<String> name =new ThreadLocal<>();
 

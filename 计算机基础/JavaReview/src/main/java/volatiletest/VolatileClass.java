@@ -16,12 +16,12 @@ public class VolatileClass {
          //主线程
          //System.out.println("currentThread()"+ Thread.currentThread().getName());
          while (true){
-            synchronized (testThread){
+            //synchronized (testThread){
                 if(testThread.isFlag()){
                     System.out.println("wdnmd .....");
 
                 }
-            }
+            //}
 
         }
 
@@ -33,8 +33,8 @@ public class VolatileClass {
             return flag;
         }
 
-        private  boolean flag = false;
-        //private volatile boolean flag = false;
+        //private  boolean flag = false;
+        private volatile boolean flag = false;
 
 
         @Override
