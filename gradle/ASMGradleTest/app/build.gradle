@@ -13,7 +13,9 @@ buildscript {
     }
     dependencies {
         //加载自定义插件 group + module + version
-        classpath 'com.maoasm.plugin:asm_test_plugin:1.0.0'
+
+        classpath 'com.mao.asm:asm_test_plugin:1.0.1'
+
     }
 }
 

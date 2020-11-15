@@ -9,7 +9,6 @@ import com.android.build.api.transform.TransformInput
 import com.android.build.api.transform.TransformInvocation
 import com.android.build.api.transform.TransformOutputProvider
 import com.android.build.gradle.internal.pipeline.TransformManager
-import com.mao.asm.visitor.ASMLifecycleClassVisitor
 import groovy.io.FileType
 import jdk.internal.org.objectweb.asm.ClassReader
 import jdk.internal.org.objectweb.asm.ClassWriter
@@ -95,7 +94,7 @@ class ASMLifecycleTransform extends Transform{
                                 ClassReader classReader = new ClassReader(clazz.bytes)
                                 ClassWriter classWriter = new ClassWriter(classReader,ClassWriter.COMPUTE_MAXS)
                                 //2.class 读取传入 ASM visitor
-                                ASMLifecycleClassVisitor asmLifecycleClassVisitor = new ASMLifecycleClassVisitor(classWriter)
+                               /* ASMLifecycleClassVisitor asmLifecycleClassVisitor = new ASMLifecycleClassVisitor(classWriter)
                                 //3.通过ClassVisitor api 处理
                                 classReader.accept(asmLifecycleClassVisitor,ClassReader.EXPAND_FRAMES)
 
@@ -105,12 +104,12 @@ class ASMLifecycleTransform extends Transform{
                                 //写回文件中
                                 FileOutputStream fos = new FileOutputStream(file.path)
                                 fos.write(bytes)
-                                fos.close()
+                                fos.close()*/
                             }
                         }
 
-                       def dest = transformOutputProvider.getContentLocation(directoryInput.name,directoryInput.contentTypes,directoryInput.scopes, Format.DIRECTORY)
-                        FileUtils.copyDirectory(directoryInput.file,dest)
+                      /* def dest = transformOutputProvider.getContentLocation(directoryInput.name,directoryInput.contentTypes,directoryInput.scopes, Format.DIRECTORY)
+                        FileUtils.copyDirectory(directoryInput.file,dest)*/
                 }
         }
     }

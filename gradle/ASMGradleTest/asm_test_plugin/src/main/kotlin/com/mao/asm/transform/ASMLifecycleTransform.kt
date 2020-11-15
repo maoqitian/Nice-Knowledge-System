@@ -9,6 +9,7 @@ import com.mao.asm.visitor.ASMLifecycleClassVisitor
 import jdk.internal.org.objectweb.asm.ClassReader
 import jdk.internal.org.objectweb.asm.ClassWriter
 import org.apache.commons.io.FileUtils
+import org.objectweb.asm.ClassVisitor
 import java.io.FileOutputStream
 
 /**
@@ -22,7 +23,7 @@ class ASMLifecycleTransform :Transform() {
      * 设置我们自定义的 Transform 对应的 Task 名称。Gradle 在编译的时候，会将这个名称显示在控制台上
      * @return String
      */
-    override fun getName(): String = "ASMLifecycleTransform"
+    override fun getName(): String = "ASMLifecycleTransform111"
 
     /**
      * 在项目中会有各种各样格式的文件，该方法可以设置 Transform 接收的文件类型
@@ -57,6 +58,8 @@ class ASMLifecycleTransform :Transform() {
     override fun isIncremental(): Boolean = false
     //对项目 class 检索操作
     override fun transform(transformInvocation: TransformInvocation) {
+        println("transform 方法调用")
+
         //获取所有 class 文件集合
         val transformInputs = transformInvocation.inputs
         val transformOutputProvider = transformInvocation.outputProvider
@@ -67,24 +70,29 @@ class ASMLifecycleTransform :Transform() {
             transformInput.directoryInputs.forEach { directoryInput ->
                 //directoryInputs代表着以源码方式参与项目编译的所有目录结构及其目录下的源码文件
                 val file = directoryInput.file
-                        if(file.isFile && file.name.startsWith(".class")){
+                println("find class file：${file.extension.substringAfterLast('.',"")}")
+                        if(file.isFile){
+                            println("find class file：${file.name}")
                             //1.读取 class 文件并解析
                             val classReader = ClassReader(file.readBytes())
                             val classWriter = ClassWriter(classReader,ClassWriter.COMPUTE_MAXS)
-                            //2.class 读取传入 ASM visitor
-                            val asmLifecycleClassVisitor = ASMLifecycleClassVisitor(classWriter)
-                            //3.通过ClassVisitor api 处理
-                            classReader.accept(asmLifecycleClassVisitor,ClassReader.EXPAND_FRAMES)
-                            //4.处理修改成功的字节码
-                            val bytes = classWriter.toByteArray()
+                            if(classWriter is ClassVisitor){
+                                //2.class 读取传入 ASM visitor
+                                val asmLifecycleClassVisitor = ASMLifecycleClassVisitor(classWriter)
+                                //3.通过ClassVisitor api 处理
+                                /*classReader.accept(asmLifecycleClassVisitor,ClassReader.EXPAND_FRAMES)
+                                //4.处理修改成功的字节码
+                                val bytes = classWriter.toByteArray()
 
-                            //写回文件中
-                            val fos =  FileOutputStream(file.path)
-                            fos.write(bytes)
-                            fos.close()
+                                //写回文件中
+                                val fos =  FileOutputStream(file.path)
+                                fos.write(bytes)
+                                fos.close()*/
+                            }
+
                         }
-                val dest = transformOutputProvider.getContentLocation(directoryInput.name,directoryInput.contentTypes,directoryInput.scopes, Format.DIRECTORY)
-                FileUtils.copyDirectory(directoryInput.file,dest)
+                /*val dest = transformOutputProvider.getContentLocation(directoryInput.name,directoryInput.contentTypes,directoryInput.scopes, Format.DIRECTORY)
+                FileUtils.copyDirectory(directoryInput.file,dest)*/
             }
         }
     }

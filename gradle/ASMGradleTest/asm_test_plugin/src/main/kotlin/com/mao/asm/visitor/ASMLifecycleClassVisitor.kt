@@ -9,8 +9,7 @@ import org.objectweb.asm.Opcodes
  * @author maoqitian
  * @date 2020/11/13 0013 11:47
  */
-class ASMLifecycleClassVisitor(private val classVisitor: ClassVisitor) :
-    ClassVisitor(Opcodes.ASM5, classVisitor) {
+class ASMLifecycleClassVisitor(classVisitor: ClassVisitor?) : ClassVisitor(Opcodes.ASM5, classVisitor) {
 
      private var className:String? = null
      private var superName:String? = null

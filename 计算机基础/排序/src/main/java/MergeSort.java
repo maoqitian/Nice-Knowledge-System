@@ -1,7 +1,7 @@
 import java.util.Arrays;
 
 /**
- * @Description: 归并排序
+ * @Description: 归并排序 二分左右寻找最小值 时间复杂度 O(nlogn)
  * @Author: maoqitian
  * @CreateDate: 2020/11/9 22:49
  */
@@ -22,14 +22,15 @@ public class MergeSort {
         //获取中位数 index
         int mid = low + (high-low)/2;
         //如果 地位index 小于高位 index
-        while(low < high) {
+        if(low < high) {
             //mind左边部分
             mergeSort(a,low,mid);
             //mid右边部分
-            mergeSort(a,low+1,high);
+            mergeSort(a,mid+1,high);
 
             //左右归并
             merge(a,low,mid,high);
+            System.out.println("一次排序结果 ："+Arrays.toString(a));
         }
     }
 
@@ -44,8 +45,10 @@ public class MergeSort {
         //把较小的数移动到新数组
         while(left <= mid && right<=high){
           if(a[left] < a[right]){
+              //记录左边小数值
               temp[index++] = a[left++];
           }else{
+
               temp[index++] = a[right++];
           }
         }
@@ -60,7 +63,7 @@ public class MergeSort {
         }
         //新数组覆盖老数组
         for (int i = 0; i < temp.length; i++) {
-            a[i+low] = temp[i++];
+            a[i+low] = temp[i];
         }
     }
 
