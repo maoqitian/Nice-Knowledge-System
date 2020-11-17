@@ -13,4 +13,12 @@ class MainActivity : AppCompatActivity() {
             startActivity(Intent(this,SecondActivity::class.java))
         }
     }
+
+    override fun onStart() {
+        super.onStart()
+    }
+
+    override fun onResume() {
+        super.onResume()
+    }
 }

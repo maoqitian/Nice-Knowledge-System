@@ -24,14 +24,19 @@ class ASMLifecycleClassVisitor(classVisitor: ClassVisitor?) : ClassVisitor(Opcod
     override fun visitMethod(access: Int, name: String, descriptor: String?, signature: String?, exceptions: Array<out String>?): MethodVisitor {
         val methodVisitor = cv.visitMethod(access,name,descriptor,signature,exceptions)
         //找到 androidX 包下的 Activity 类
-        if (superName == "androidx.appcompat.app.AppCompatActivity"){
+        if (superName == "androidx/appcompat/app/AppCompatActivity"){
             //对 onCreate 方法处理 加入日志打印
             if (name.startsWith("onCreate")){
-               return ASMLifecycleMethodVisitor(
-                   methodVisitor,
-                   className!!,
-                   superName!!
-               )
+                println("do ASM ClassVisitor visitMethod onCreate")
+                return ASMLifecycleMethodVisitor(methodVisitor, className!!, name)
+            }
+            if (name.startsWith("onStart")){
+                println("do ASM ClassVisitor visitMethod onStart")
+                return ASMLifecycleMethodVisitor(methodVisitor, className!!, name)
+            }
+            if (name.startsWith("onResume")){
+                println("do ASM ClassVisitor visitMethod onResume")
+                return ASMLifecycleMethodVisitor(methodVisitor, className!!, name)
             }
         }
         return methodVisitor

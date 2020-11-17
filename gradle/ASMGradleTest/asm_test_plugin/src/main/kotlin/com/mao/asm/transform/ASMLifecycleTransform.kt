@@ -6,10 +6,10 @@ import com.android.build.api.transform.Transform
 import com.android.build.api.transform.TransformInvocation
 import com.android.build.gradle.internal.pipeline.TransformManager
 import com.mao.asm.visitor.ASMLifecycleClassVisitor
-import jdk.internal.org.objectweb.asm.ClassReader
-import jdk.internal.org.objectweb.asm.ClassWriter
 import org.apache.commons.io.FileUtils
-import org.objectweb.asm.ClassVisitor
+import org.objectweb.asm.ClassReader
+import org.objectweb.asm.ClassWriter
+import java.io.File
 import java.io.FileOutputStream
 
 /**
@@ -67,32 +67,39 @@ class ASMLifecycleTransform :Transform() {
         transformOutputProvider?.deleteAll()
 
         transformInputs.forEach { transformInput ->
+            // Caused by: java.lang.ClassNotFoundException: Didn't find class "androidx.appcompat.R$drawable" on path 问题
+            // gradle 3.6.0以上R类不会转为.class文件而会转成jar，因此在Transform实现中需要单独拷贝，TransformInvocation.inputs.jarInputs
+            // jar 文件处理
+            transformInput.jarInputs.forEach { jarInput ->
+                val file = jarInput.file
+                println("find jar input: " + file.name)
+                val dest = transformOutputProvider.getContentLocation(jarInput.name, jarInput.contentTypes, jarInput.scopes, Format.JAR)
+                FileUtils.copyFile(file, dest)
+            }
+            //源码文件处理
+            //directoryInputs代表着以源码方式参与项目编译的所有目录结构及其目录下的源码文件
             transformInput.directoryInputs.forEach { directoryInput ->
-                //directoryInputs代表着以源码方式参与项目编译的所有目录结构及其目录下的源码文件
-                val file = directoryInput.file
-                println("find class file：${file.extension.substringAfterLast('.',"")}")
-                        if(file.isFile){
-                            println("find class file：${file.name}")
-                            //1.读取 class 文件并解析
-                            val classReader = ClassReader(file.readBytes())
-                            val classWriter = ClassWriter(classReader,ClassWriter.COMPUTE_MAXS)
-                            if(classWriter is ClassVisitor){
-                                //2.class 读取传入 ASM visitor
-                                val asmLifecycleClassVisitor = ASMLifecycleClassVisitor(classWriter)
-                                //3.通过ClassVisitor api 处理
-                                /*classReader.accept(asmLifecycleClassVisitor,ClassReader.EXPAND_FRAMES)
-                                //4.处理修改成功的字节码
-                                val bytes = classWriter.toByteArray()
-
-                                //写回文件中
-                                val fos =  FileOutputStream(file.path)
-                                fos.write(bytes)
-                                fos.close()*/
-                            }
-
-                        }
-                /*val dest = transformOutputProvider.getContentLocation(directoryInput.name,directoryInput.contentTypes,directoryInput.scopes, Format.DIRECTORY)
-                FileUtils.copyDirectory(directoryInput.file,dest)*/
+                //遍历所有文件和文件夹 找到 class 结尾文件
+                directoryInput.file.walkTopDown()
+                    .filter { it.isFile }
+                    .filter { it.extension == "class" }
+                    .forEach { file ->
+                        println("find class file：${file.name}")
+                        val classReader = ClassReader(file.readBytes())
+                        val classWriter = ClassWriter(classReader, ClassWriter.COMPUTE_MAXS)
+                        //2.class 读取传入 ASM visitor
+                        val asmLifecycleClassVisitor = ASMLifecycleClassVisitor(classWriter)
+                        //3.通过ClassVisitor api 处理
+                        classReader.accept(asmLifecycleClassVisitor,ClassReader.EXPAND_FRAMES)
+                        //4.处理修改成功的字节码
+                        val bytes = classWriter.toByteArray()
+                        //写回文件中
+                        val fos =  FileOutputStream(file.path)
+                        fos.write(bytes)
+                        fos.close()
+                }
+                val dest = transformOutputProvider.getContentLocation(directoryInput.name,directoryInput.contentTypes,directoryInput.scopes, Format.DIRECTORY)
+                FileUtils.copyDirectory(directoryInput.file,dest)
             }
         }
     }

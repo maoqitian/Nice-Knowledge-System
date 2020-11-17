@@ -52,3 +52,51 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
 
 }
+
+// build.gradle 自定义插件
+class GreetingPlugin implements Plugin<Project>{
+
+    @Override
+    void apply(Project target) {
+
+        target.task("hello1"){
+            doLast {
+                println("Hello from the GreetingPlugin")
+            }
+        }
+    }
+}
+
+apply plugin: GreetingPlugin
+
+
+class GreetingPluginExtension { //相当于 Java bean
+    String greeter
+    String message
+}
+
+//build.gradle   自定义插件
+class GreetingPlugin2 implements Plugin<Project> {
+    void apply(Project project) {
+        //获取配置
+        def extension = project.extensions.create('greeting', GreetingPluginExtension)
+
+        project.task('hello2') { //名字为 hello 的task
+            doLast {
+                //获取 extension 配置信息
+                println "${extension.message} from ${extension.greeter}"
+            }
+        }
+    }
+}
+
+//引入插件
+apply plugin: GreetingPlugin2
+
+// 配置 extension
+greeting{
+    greeter = 'Gradle'
+    message = "Hi"
+}
+
+apply plugin: TestPlugin
