@@ -9,11 +9,11 @@ class SecondActivity : AppCompatActivity() {
         setContentView(R.layout.activity_second_layout)
     }
 
-    override fun onStart() {
-        super.onStart()
-    }
-
     override fun onResume() {
         super.onResume()
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
     }
 }

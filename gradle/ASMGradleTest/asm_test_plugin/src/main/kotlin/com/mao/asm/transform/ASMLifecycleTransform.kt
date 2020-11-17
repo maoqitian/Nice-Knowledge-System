@@ -9,7 +9,6 @@ import com.mao.asm.visitor.ASMLifecycleClassVisitor
 import org.apache.commons.io.FileUtils
 import org.objectweb.asm.ClassReader
 import org.objectweb.asm.ClassWriter
-import java.io.File
 import java.io.FileOutputStream
 
 /**

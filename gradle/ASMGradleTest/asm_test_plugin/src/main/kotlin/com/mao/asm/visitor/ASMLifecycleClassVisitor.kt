@@ -38,6 +38,22 @@ class ASMLifecycleClassVisitor(classVisitor: ClassVisitor?) : ClassVisitor(Opcod
                 println("do ASM ClassVisitor visitMethod onResume")
                 return ASMLifecycleMethodVisitor(methodVisitor, className!!, name)
             }
+            if (name.startsWith("onRestart")){
+                println("do ASM ClassVisitor visitMethod onRestart")
+                return ASMLifecycleMethodVisitor(methodVisitor, className!!, name)
+            }
+            if (name.startsWith("onPause")){
+                println("do ASM ClassVisitor visitMethod onPause")
+                return ASMLifecycleMethodVisitor(methodVisitor, className!!, name)
+            }
+            if (name.startsWith("onStop")){
+                println("do ASM ClassVisitor visitMethod onStop")
+                return ASMLifecycleMethodVisitor(methodVisitor, className!!, name)
+            }
+            if (name.startsWith("onDestroy")){
+                println("do ASM ClassVisitor visitMethod onDestroy")
+                return ASMLifecycleMethodVisitor(methodVisitor, className!!, name)
+            }
         }
         return methodVisitor
     }
