@@ -59,7 +59,7 @@ class ASMLifecycleTransform :Transform() {
     override fun transform(transformInvocation: TransformInvocation) {
         println("transform 方法调用")
 
-        //获取所有 class 文件集合
+        //获取所有 输入 文件集合
         val transformInputs = transformInvocation.inputs
         val transformOutputProvider = transformInvocation.outputProvider
 
@@ -71,7 +71,7 @@ class ASMLifecycleTransform :Transform() {
             // jar 文件处理
             transformInput.jarInputs.forEach { jarInput ->
                 val file = jarInput.file
-                println("find jar input: " + file.name)
+                println("find jar input:$file.name")
                 val dest = transformOutputProvider.getContentLocation(jarInput.name, jarInput.contentTypes, jarInput.scopes, Format.JAR)
                 FileUtils.copyFile(file, dest)
             }
@@ -83,7 +83,7 @@ class ASMLifecycleTransform :Transform() {
                     .filter { it.isFile }
                     .filter { it.extension == "class" }
                     .forEach { file ->
-                        println("find class file：${file.name}")
+                        println("find class file:${file.name}")
                         val classReader = ClassReader(file.readBytes())
                         val classWriter = ClassWriter(classReader, ClassWriter.COMPUTE_MAXS)
                         //2.class 读取传入 ASM visitor
