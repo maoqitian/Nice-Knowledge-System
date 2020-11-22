@@ -13,7 +13,7 @@ import org.gradle.api.Project
 class MainPlugin :Plugin<Project> {
     override fun apply(project: Project) {
         println("======自定义MainPlugin加载===========")
-        //执行自定义的 Transform task
+        //注册执行自定义的 Transform task
 
         val asmTransform = project.extensions.getByType(AppExtension::class.java)
         println("=======registerTransform ASMLifecycleTransform ==========")
