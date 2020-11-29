@@ -17,9 +17,13 @@ public class MergeSort {
 
     }
 
-
+    /**
+     * @param a 待排序数组
+     * @param low 低位index
+     * @param high 高位index
+     */
     public static void mergeSort(int [] a,int low,int high){
-        //获取中位数 index
+        //获取中位数 mid
         int mid = low + (high-low)/2;
         //如果 地位index 小于高位 index
         if(low < high) {
@@ -34,6 +38,12 @@ public class MergeSort {
         }
     }
 
+    /**
+     * @param a 待排序数组
+     * @param low 低位index
+     * @param mid 中位数index
+     * @param high 高位index
+     */
     public static void merge(int[] a, int low, int mid, int high) {
         //存储中间结果数组
         int [] temp = new int[high - low +1];
