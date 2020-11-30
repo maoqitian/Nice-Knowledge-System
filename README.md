@@ -107,7 +107,7 @@ Android 音视频开发学习思路 | [转载地址](https://www.cnblogs.com/ren
 文章标题 | 状态| 原创、转载
 ---|---|---
 [Gradle 安装与 Gradle 命令](https://github.com/maoqitian/Nice-Knowledge-System/blob/master/gradle/post/Gradle%20%E5%AE%89%E8%A3%85%E4%B8%8E%20Gradle%20%E5%91%BD%E4%BB%A4.md)| 已完成|原创
-[Groovy语法了解]| 未完成|持续进行
+[Groovy了解](https://github.com/maoqitian/Nice-Knowledge-System/blob/master/gradle/post/Groovy%E4%BA%86%E8%A7%A3.md)| 已完成 | 原创
 
 
 
