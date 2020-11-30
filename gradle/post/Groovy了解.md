@@ -414,7 +414,7 @@ groovyc -d classes test.groovy
 - 2.其次，使用 CallSite 类型数组分别保存类对象和 groovy脚本中编写的代码
 - 3.然后为这个类创建了静态 main 方法，并在 main 方法中动态代理调用 test 类的 run 方法
 - 4.最后 run 方法执行 groovy 脚本编写的代码
-- 到此，是否会有豁然开朗的感觉，当我们使用命令**groovy XXXX**执行 groovy 脚本，==**其实是执行编译生成类对象的静态main方法，并在main方法中动态代理类对象执行了它的run方法来执行脚本中的逻辑。**==
+- 到此，是否会有豁然开朗的感觉，当我们使用命令**groovy XXXX**执行 groovy 脚本，**其实是执行编译生成类对象的静态main方法，并在main方法中动态代理类对象执行了它的run方法来执行脚本中的逻辑。**
 
 ## demo
 
