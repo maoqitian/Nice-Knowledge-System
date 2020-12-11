@@ -394,7 +394,7 @@ implementation 'org.ow2.asm:asm-commons:9.0'
 ####  ASM 几个关键类
 
 - ClassReader：读取字节码文件的字节数组，并将字节码传递给ClassWriter
-- ClassWriter：它的父类是ClassVisitor，作用是生成修改后的字节码，并输出字节数组；字节码文件由无符号数和表组成，最终其实为十六进制数，在 ASM 修改了字节码文件之后，肯定会影响到常量池的大小，此外包括本地变量表和操作数栈等变化，不过放心，只要在实例化 ClassWriter 操作类的时候设置 COMPUTE_MAXS 后，ASM 就会自动计算本地变量表和操作数栈。(
+- ClassWriter：它的父类是ClassVisitor，作用是生成修改后的字节码，并输出字节数组；字节码文件由无符号数和表组成，最终其实为十六进制数，在 ASM 修改了字节码文件之后，肯定会影响到常量池的大小，此外包括本地变量表和操作数栈等变化，不过放心，只要在实例化 ClassWriter 操作类的时候设置 COMPUTE_MAXS 后，ASM 就会自动计算本地变量表和操作数栈。
 
 ```
 val classWriter = ClassWriter(classReader, ClassWriter.COMPUTE_MAXS)
@@ -507,7 +507,7 @@ class ASMLifecycleMethodVisitor(private val methodVisitor:MethodVisitor, private
 
 - 插件效果展示，从 MainActivity 跳转 SecondActivity再返回如下，可以看到只有Activity实现了生命周期方法就会自动插入日志打印代码
 
-![自动插桩效果](https://github.com/maoqitian/MaoMdPhoto/raw/master/Android%20Gradle/%E8%87%AA%E5%AE%9A%E4%B9%89%E6%8F%92%E4%BB%B6/%E8%87%AA%E5%8A%A8%E6%8F%92%E6%A1%A9%E6%95%88%E6%9E%9C.pngo)
+![自动插桩效果](https://github.com/maoqitian/MaoMdPhoto/raw/master/Android%20Gradle/%E8%87%AA%E5%AE%9A%E4%B9%89%E6%8F%92%E4%BB%B6/%E8%87%AA%E5%8A%A8%E6%8F%92%E6%A1%A9%E6%95%88%E6%9E%9C.png)
 
 - 最后以一张图来说明自定义插件介入修改字节码的过程
 
