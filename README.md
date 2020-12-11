@@ -109,8 +109,7 @@ Android 音视频开发学习思路 | [转载地址](https://www.cnblogs.com/ren
 [Gradle 安装与 Gradle 命令](https://github.com/maoqitian/Nice-Knowledge-System/blob/master/gradle/post/Gradle%20%E5%AE%89%E8%A3%85%E4%B8%8E%20Gradle%20%E5%91%BD%E4%BB%A4.md)| 已完成|原创
 [Groovy了解](https://github.com/maoqitian/Nice-Knowledge-System/blob/master/gradle/post/Groovy%E4%BA%86%E8%A7%A3.md)| 已完成 | 原创
 [深入了解 Gradle](https://github.com/maoqitian/Nice-Knowledge-System/blob/master/gradle/post/%E6%B7%B1%E5%85%A5%E4%BA%86%E8%A7%A3%20Gradle.md)| 已完成 | 原创
-
-- 敬请期待
+[自定义Gradle插件](https://github.com/maoqitian/Nice-Knowledge-System/blob/master/gradle/post/%E8%87%AA%E5%AE%9A%E4%B9%89Gradle%E6%8F%92%E4%BB%B6.md)| 已完成 | 原创
 
 ## Java进阶
 
