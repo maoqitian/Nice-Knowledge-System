@@ -151,7 +151,7 @@ build_android
 
 - 编译完成，会在 FFmpeg项目目录生成一个 android 文件夹，里面就是帮我们生成好的动态链接库和头文件，如下图所示
 
-<img src="https://github.com/maoqitian/MaoMdPhoto/raw/master/AndroidFFmpeg/FFmpeg%E7%BC%96%E8%AF%91/%E7%BC%96%E8%AF%91%E7%94%9F%E6%88%90%E5%8A%A8%E6%80%81%E9%93%BE%E6%8E%A5%E5%BA%93.png"  height="600" width="500"><img>
+<img src="https://github.com/maoqitian/MaoMdPhoto/raw/master/AndroidFFmpeg/FFmpeg%E7%BC%96%E8%AF%91/%E7%BC%96%E8%AF%91%E7%94%9F%E6%88%90%E5%8A%A8%E6%80%81%E9%93%BE%E6%8E%A5%E5%BA%93.png"  height="600" width="700"><img>
 
 ```
 libavformat：用于各种音视频封装格式的生成和解析；
