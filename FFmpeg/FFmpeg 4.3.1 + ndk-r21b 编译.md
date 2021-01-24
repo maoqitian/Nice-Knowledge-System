@@ -151,8 +151,7 @@ build_android
 
 - 编译完成，会在 FFmpeg项目目录生成一个 android 文件夹，里面就是帮我们生成好的动态链接库和头文件，如下图所示
 
-![编译生成动态链接库](https://github.com/maoqitian/MaoMdPhoto/raw/master/AndroidFFmpeg/FFmpeg%E7%BC%96%E8%AF%91/%E7%BC%96%E8%AF%91%E7%94%9F%E6%88%90%E5%8A%A8%E6%80%81%E9%93%BE%E6%8E%A5%E5%BA%93.png) 
-
+<img src="https://github.com/maoqitian/MaoMdPhoto/raw/master/AndroidFFmpeg/FFmpeg%E7%BC%96%E8%AF%91/%E7%BC%96%E8%AF%91%E7%94%9F%E6%88%90%E5%8A%A8%E6%80%81%E9%93%BE%E6%8E%A5%E5%BA%93.png"  height="600" width="700"><img>
 
 ```
 libavformat：用于各种音视频封装格式的生成和解析；
@@ -431,7 +430,7 @@ Java_com_mao_ffmpegplayer_MainActivity_configurationInfo(JNIEnv *env, jobject in
 
 }
 ```
-![library 项目目录](https://github.com/maoqitian/MaoMdPhoto/raw/master/AndroidFFmpeg/FFmpeg%E7%BC%96%E8%AF%91/library%20%E9%A1%B9%E7%9B%AE%E7%9B%AE%E5%BD%95.png)
+<img src="https://github.com/maoqitian/MaoMdPhoto/raw/master/AndroidFFmpeg/FFmpeg%E7%BC%96%E8%AF%91/library%20%E9%A1%B9%E7%9B%AE%E7%9B%AE%E5%BD%95.png"  height="600" width="340"><img>
 
 ### 简单调用测试
 - 随意编写一个界面，加载刚刚CMakeLists.txt设置编译生成的**libffplayer.so**，具体其他代码就不贴了，可以自行查看文末项目中代码
@@ -457,7 +456,7 @@ Java_com_mao_ffmpegplayer_MainActivity_configurationInfo(JNIEnv *env, jobject in
 
 ### 测试结果
 
-<img src="https://github.com/maoqitian/MaoMdPhoto/raw/master/AndroidFFmpeg/FFmpeg%E7%BC%96%E8%AF%91/ffmpegdemo.gif"  height="300" width="170"><img>
+<img src="https://github.com/maoqitian/MaoMdPhoto/raw/master/AndroidFFmpeg/FFmpeg%E7%BC%96%E8%AF%91/ffmpegdemo.gif"  height="600" width="340"><img>
 
 ## 项目地址
 
