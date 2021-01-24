@@ -1,7 +1,7 @@
 package builder;
 
 /**
- * @Description: 电脑对象抽象类
+ * @Description: 电脑对象抽象类 相当于 product 角色
  * @Author: maoqitian
  * @CreateDate: 2021/1/23 22:39
  */

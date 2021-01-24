@@ -1,7 +1,7 @@
 package builder;
 
 /**
- * @Description: mbp
+ * @Description: mbp 具体 product 类
  * @Author: maoqitian
  * @CreateDate: 2021/1/23 22:45
  */
@@ -23,6 +23,9 @@ public class MacBookPro extends Computer{
                 '}';
     }
 
+    /**
+     * UML图中是作为抽象类 这里直接实现 Builder , 规范 product 创建
+     */
     public static class Builder {
         private final ComputerParams P;
 
