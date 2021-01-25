@@ -170,7 +170,7 @@ implementation 'com.squareup:javapoet:1.11.1'
 ```
 - 最后主工程引入依赖，编译项目自动生成ViewModel
 
-<img src="https://github.com/maoqitian/MaoMdPhoto/blob/master/Android%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BA%93%E5%88%86%E6%9E%90/APT/build%E6%9E%84%E5%BB%BA%E8%87%AA%E5%8A%A8%E7%94%9F%E6%88%90ViewModeljava.png"  height="300" width="900">
+<img src="https://github.com/maoqitian/MaoMdPhoto/blob/master/Android%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BA%93%E5%88%86%E6%9E%90/APT/build%E6%9E%84%E5%BB%BA%E8%87%AA%E5%8A%A8%E7%94%9F%E6%88%90ViewModeljava.png"  height="300" width="1200">
 
 ## 注解处理器支持 kotlin 
 
