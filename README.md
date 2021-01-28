@@ -34,6 +34,7 @@
 文章标题 | 状态| 原创、转载
 ---|---|---
 [Android 基本架构之MVP分析与实践](https://juejin.im/post/5d680af66fb9a06af92bb780) | 已发布|原创
+[Android 组件化想法实践](https://github.com/maoqitian/Nice-Knowledge-System/blob/master/Android-Component/Android%20%E7%BB%84%E4%BB%B6%E5%8C%96%E6%83%B3%E6%B3%95%E5%AE%9E%E8%B7%B5.md) | 已发布|原创
 
 ### 三方库源码解析
 
