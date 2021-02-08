@@ -1,7 +1,7 @@
 package stragety
 
 /**
- * @Description: 水果基类 每种水果的单价 有所不同，所以计算公式也不同
+ * @Description: 水果基类 每种水果的单价 有所不同，所以计算公式也不同 Stragety
  * @Author: maoqitian
  * @CreateDate: 2021/2/3 22:34
  */
