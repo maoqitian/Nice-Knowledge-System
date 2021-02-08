@@ -121,6 +121,23 @@ Android 音视频开发学习思路 | [转载地址](https://www.cnblogs.com/ren
 [重新认识Java字节码](https://github.com/maoqitian/Nice-Knowledge-System/blob/master/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/Java/%E9%87%8D%E6%96%B0%E8%AE%A4%E8%AF%86Java%E5%AD%97%E8%8A%82%E7%A0%81.md)| 已完成|原创
 [Java多线程核心知识点进阶](https://github.com/maoqitian/Nice-Knowledge-System/blob/master/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/Java/Java%E5%A4%9A%E7%BA%BF%E7%A8%8B%E6%A0%B8%E5%BF%83%E7%9F%A5%E8%AF%86%E7%82%B9%E8%BF%9B%E9%98%B6.md)| 已完成|原创
 
+## 设计模式
+
+### 设计模式六大原则
+- 单一责任原则
+- 开放封闭原则
+- 里式替换原则
+- 依赖倒置原则
+- 接口隔离原则
+- 达米特原则
+
+文章标题 | 状态| 原创、转载
+---|---|---
+[代理模式](https://github.com/maoqitian/Nice-Knowledge-System/blob/master/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/%E4%BB%A3%E7%90%86%E6%A8%A1%E5%BC%8F.md) | 已完成 |原创
+[观察者模式](https://github.com/maoqitian/Nice-Knowledge-System/blob/master/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/%E8%A7%82%E5%AF%9F%E8%80%85%E6%A8%A1%E5%BC%8F/%E8%A7%82%E5%AF%9F%E8%80%85%E6%A8%A1%E5%BC%8F.md) | 已完成 |原创
+[Builder模式](https://github.com/maoqitian/Nice-Knowledge-System/blob/master/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/Builder%E6%A8%A1%E5%BC%8F/Builder%E6%A8%A1%E5%BC%8F.md) | 已完成 |原创
+[单例模式](https://github.com/maoqitian/Nice-Knowledge-System/blob/master/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F(Singleton)/%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F.md) | 已完成 |原创
+
 # 后端
 
 ## SpringBoot
@@ -201,23 +218,6 @@ Kotlin学习(二)之集合、函数定义及调用| 敬请期待|原创
 
 ## 计算机组成原理
 - 敬请期待
-
-## 设计模式
-### 设计模式六大原则
-- 单一责任原则
-- 开放封闭原则
-- 里式替换原则
-- 依赖倒置原则
-- 接口隔离原则
-- 达米特原则
-
-文章标题 | 状态| 原创、转载
----|---|---
-[代理模式](https://github.com/maoqitian/Nice-Knowledge-System/blob/master/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/%E4%BB%A3%E7%90%86%E6%A8%A1%E5%BC%8F.md) | 已完成 |原创
-[观察者模式](https://github.com/maoqitian/Nice-Knowledge-System/blob/master/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/%E8%A7%82%E5%AF%9F%E8%80%85%E6%A8%A1%E5%BC%8F/%E8%A7%82%E5%AF%9F%E8%80%85%E6%A8%A1%E5%BC%8F.md) | 已完成 |原创
-[Builder模式](https://github.com/maoqitian/Nice-Knowledge-System/blob/master/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/Builder%E6%A8%A1%E5%BC%8F/Builder%E6%A8%A1%E5%BC%8F.md) | 已完成 |原创
-
-
 ## 数据库
 - 敬请期待
 
