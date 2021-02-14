@@ -130,13 +130,24 @@ Android 音视频开发学习思路 | [转载地址](https://www.cnblogs.com/ren
 - 依赖倒置原则
 - 接口隔离原则
 - 达米特原则
+### 创建型设计模式
+文章标题 | 状态| 原创、转载
+---|---|---
+[单例模式](https://github.com/maoqitian/Nice-Knowledge-System/blob/master/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F(Singleton)/%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F.md) | 已完成 |原创
+[Builder模式](https://github.com/maoqitian/Nice-Knowledge-System/blob/master/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/Builder%E6%A8%A1%E5%BC%8F/Builder%E6%A8%A1%E5%BC%8F.md) | 已完成 |原创
+[工厂方法模式](https://github.com/maoqitian/Nice-Knowledge-System/blob/master/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/%E5%B7%A5%E5%8E%82%E6%96%B9%E6%B3%95%E6%A8%A1%E5%BC%8F(factory)/%E5%B7%A5%E5%8E%82%E6%96%B9%E6%B3%95%E6%A8%A1%E5%BC%8F.md) | 已完成 |原创
+
+### 结构型设计模式
 
 文章标题 | 状态| 原创、转载
 ---|---|---
 [代理模式](https://github.com/maoqitian/Nice-Knowledge-System/blob/master/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/%E4%BB%A3%E7%90%86%E6%A8%A1%E5%BC%8F.md) | 已完成 |原创
+
+### 行为型设计模式
+
+文章标题 | 状态| 原创、转载
+---|---|---
 [观察者模式](https://github.com/maoqitian/Nice-Knowledge-System/blob/master/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/%E8%A7%82%E5%AF%9F%E8%80%85%E6%A8%A1%E5%BC%8F/%E8%A7%82%E5%AF%9F%E8%80%85%E6%A8%A1%E5%BC%8F.md) | 已完成 |原创
-[Builder模式](https://github.com/maoqitian/Nice-Knowledge-System/blob/master/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/Builder%E6%A8%A1%E5%BC%8F/Builder%E6%A8%A1%E5%BC%8F.md) | 已完成 |原创
-[单例模式](https://github.com/maoqitian/Nice-Knowledge-System/blob/master/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F(Singleton)/%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F.md) | 已完成 |原创
 [策略模式](https://github.com/maoqitian/Nice-Knowledge-System/blob/master/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/%E7%AD%96%E7%95%A5%E6%A8%A1%E5%BC%8F(stragety)/%E7%AD%96%E7%95%A5%E6%A8%A1%E5%BC%8F.md) | 已完成 |原创
 
 # 后端
