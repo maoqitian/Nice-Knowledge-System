@@ -137,7 +137,7 @@ Android 音视频开发学习思路 | [转载地址](https://www.cnblogs.com/ren
 [Builder模式](https://github.com/maoqitian/Nice-Knowledge-System/blob/master/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/Builder%E6%A8%A1%E5%BC%8F/Builder%E6%A8%A1%E5%BC%8F.md) | 已完成 |原创
 [工厂方法模式](https://github.com/maoqitian/Nice-Knowledge-System/blob/master/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/%E5%B7%A5%E5%8E%82%E6%96%B9%E6%B3%95%E6%A8%A1%E5%BC%8F(factory)/%E5%B7%A5%E5%8E%82%E6%96%B9%E6%B3%95%E6%A8%A1%E5%BC%8F.md) | 已完成 |原创
 [抽象工厂模式](https://github.com/maoqitian/Nice-Knowledge-System/blob/master/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/%E6%8A%BD%E8%B1%A1%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F(abstract-factory)/%E6%8A%BD%E8%B1%A1%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F.md) | 已完成 |原创
-[原型模式(Prototype)](https://github.com/maoqitian/Nice-Knowledge-System/blob/master/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/%E6%8A%BD%E8%B1%A1%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F(abstract-factory)/%E6%8A%BD%E8%B1%A1%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F.md) | 已完成 |原创
+[原型模式(Prototype)](https://github.com/maoqitian/Nice-Knowledge-System/blob/master/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/%E5%8E%9F%E5%9E%8B%E6%A8%A1%E5%BC%8F(Prototype)/%E5%8E%9F%E5%9E%8B%E6%A8%A1%E5%BC%8F(Prototype).md) | 已完成 |原创
 ### 结构型设计模式
 
 文章标题 | 状态| 原创、转载
