@@ -13,7 +13,7 @@
 [深入理解 Android 之 Activity启动流程](https://github.com/maoqitian/Nice-Knowledge-System/blob/master/AndroidFramework%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90/Activity%E5%90%AF%E5%8A%A8/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3Android%20%E4%B9%8B%20Activity%E5%90%AF%E5%8A%A8%E6%B5%81%E7%A8%8B%EF%BC%88Android%2010%EF%BC%89.md)| 已发布|原创
 [深入理解 Android之应用程序进程启动流程](https://github.com/maoqitian/Nice-Knowledge-System/blob/master/AndroidFramework%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90/%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E8%BF%9B%E7%A8%8B%E5%90%AF%E5%8A%A8/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3Android%E4%B9%8B%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E8%BF%9B%E7%A8%8B%E5%90%AF%E5%8A%A8%E6%B5%81%E7%A8%8B(Android%2010).md)| 已发布|原创
 [深入理解 Android 之 Service启动流程](https://github.com/maoqitian/Nice-Knowledge-System/blob/master/AndroidFramework%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90/Service%E5%90%AF%E5%8A%A8%E5%92%8C%E7%BB%91%E5%AE%9A/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3Android%20%E4%B9%8BService%E5%90%AF%E5%8A%A8%E6%B5%81%E7%A8%8B.md)| 已发布|原创
-[深入理解 Android 之 Service启动流程](https://github.com/maoqitian/Nice-Knowledge-System/blob/master/AndroidFramework%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90/Service%E5%90%AF%E5%8A%A8%E5%92%8C%E7%BB%91%E5%AE%9A/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3Android%20%E4%B9%8BService%E7%BB%91%E5%AE%9A%E6%B5%81%E7%A8%8B.md)| 已发布|原创
+[深入理解 Android 之 Service 绑定流程](https://github.com/maoqitian/Nice-Knowledge-System/blob/master/AndroidFramework%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90/Service%E5%90%AF%E5%8A%A8%E5%92%8C%E7%BB%91%E5%AE%9A/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3Android%20%E4%B9%8BService%E7%BB%91%E5%AE%9A%E6%B5%81%E7%A8%8B.md)| 已发布|原创
 [深入理解 Android 之 BroadcastReceiver](https://github.com/maoqitian/Nice-Knowledge-System/blob/master/AndroidFramework%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90/BroadcastReceiver/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3Android%E4%B9%8B%20BroadcastReceiver.md)| 已发布|原创
 [深入理解 Android 之 ContentProvider](https://github.com/maoqitian/Nice-Knowledge-System/blob/master/AndroidFramework%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90/ContentProvider/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3Android%E4%B9%8B%20ContentProvider.md)| 已发布|原创
 
@@ -137,6 +137,7 @@ Android 音视频开发学习思路 | [转载地址](https://www.cnblogs.com/ren
 [Builder模式](https://github.com/maoqitian/Nice-Knowledge-System/blob/master/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/Builder%E6%A8%A1%E5%BC%8F/Builder%E6%A8%A1%E5%BC%8F.md) | 已完成 |原创
 [工厂方法模式](https://github.com/maoqitian/Nice-Knowledge-System/blob/master/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/%E5%B7%A5%E5%8E%82%E6%96%B9%E6%B3%95%E6%A8%A1%E5%BC%8F(factory)/%E5%B7%A5%E5%8E%82%E6%96%B9%E6%B3%95%E6%A8%A1%E5%BC%8F.md) | 已完成 |原创
 [抽象工厂模式](https://github.com/maoqitian/Nice-Knowledge-System/blob/master/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/%E6%8A%BD%E8%B1%A1%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F(abstract-factory)/%E6%8A%BD%E8%B1%A1%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F.md) | 已完成 |原创
+[原型模式(Prototype)](https://github.com/maoqitian/Nice-Knowledge-System/blob/master/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/%E5%8E%9F%E5%9E%8B%E6%A8%A1%E5%BC%8F(Prototype)/%E5%8E%9F%E5%9E%8B%E6%A8%A1%E5%BC%8F(Prototype).md) | 已完成 |原创
 ### 结构型设计模式
 
 文章标题 | 状态| 原创、转载
