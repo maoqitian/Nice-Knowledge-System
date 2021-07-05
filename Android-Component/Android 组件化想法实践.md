@@ -7,6 +7,7 @@
 - 单个组件架构参照谷歌官方推荐 MVVM 模式
 - 利用架构组件 LiveData 和 ViewModel 方便完成 MVVM 模式
 - 依赖注入使用 Koin 
+- [官方推荐应用架构指南](https://developer.android.com/jetpack/guide?hl=zh-cn)
 
 ![image](https://github.com/maoqitian/MaoMdPhoto/raw/master/Android%E7%BB%84%E4%BB%B6%E5%8C%96/Android-final-architecture.png)
 
