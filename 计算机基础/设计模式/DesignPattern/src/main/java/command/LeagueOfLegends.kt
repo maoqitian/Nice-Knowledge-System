@@ -12,14 +12,15 @@ class LeagueOfLegends {
      * Q 操作
      */
     fun Q(){
-        printf("执行了Q操作")
+        println("执行了Q操作")
+
     }
 
     /**
      * W 操作
      */
     fun W(){
-        printf("执行了W操作")
+        println("执行了W操作")
 
     }
 
@@ -27,7 +28,7 @@ class LeagueOfLegends {
      * E 操作
      */
     fun E(){
-        printf("执行了E操作")
+        println("执行了E操作")
 
     }
 
@@ -35,21 +36,21 @@ class LeagueOfLegends {
      * R 操作
      */
     fun R(){
-        printf("执行了R操作")
+        println("执行了R操作")
 
     }
     /**
      * D 操作
      */
     fun D(){
-        printf("执行了D操作")
+        println("执行了D操作")
 
     }
     /**
      * R 操作
      */
     fun F(){
-        printf("执行了F操作")
+        println("执行了F操作")
 
     }
 }
