@@ -3,7 +3,7 @@
 ![Android组件化架构](https://github.com/maoqitian/MaoMdPhoto/raw/master/Android%E7%BB%84%E4%BB%B6%E5%8C%96/Android%E7%BB%84%E4%BB%B6%E5%8C%96%E6%9E%B6%E6%9E%84.jpg)
 
 ## 单个组件架构
-- 单个组件架构参照谷歌官方推荐架构模型，每个组件仅依赖于其下一级的组件。例如，Activity 和 Fragment 仅依赖于视图模型。存储区是唯一依赖于其他多个类的类；存储区依赖于持久性数据模型和远程后端数据源
+- 单个组件架构参照谷歌官方推荐架构模型，每个组件仅依赖于其下一级的组件。例如，Activity 和 Fragment 仅依赖于视图模型（ViewModel）。存储区是唯一依赖于其他多个类的类；存储区（Repository）依赖于持久性数据模型和远程后端数据源
 - 利用架构组件 LiveData 和 ViewModel 方便完成架构模式
 - 依赖注入使用 Koin 
 - [官方推荐应用架构指南](https://developer.android.com/jetpack/guide?hl=zh-cn)
