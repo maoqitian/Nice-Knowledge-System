@@ -1,5 +1,5 @@
 apply plugin: 'groovy'
-apply plugin: 'maven'
+apply plugin: 'maven-publish'
 apply plugin: 'kotlin'
 
 dependencies {
@@ -9,21 +9,50 @@ dependencies {
     implementation localGroovy()
 
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
-    implementation 'com.android.tools.build:gradle:4.0.0'
+    implementation 'com.android.tools.build:gradle:7.0.0'
+    implementation 'commons-io:commons-io:2.11.0'
+
 
     implementation 'org.ow2.asm:asm:9.0'
     implementation 'org.ow2.asm:asm-commons:9.0'
 }
 
 
-group='com.mao.asm'
-version='1.0.1'
+def group='com.mao.asm'
+def plugin_version='1.0.1'
 
-uploadArchives {
+/*uploadArchives {
     repositories {
         mavenDeployer {
             //本地的Maven地址设置
             repository(url: uri('../asm_test_repo'))
+        }
+    }
+}*/
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_1_8
+    targetCompatibility = JavaVersion.VERSION_1_8
+}
+// 原本 uploadArchives 变更为 maven-publish
+// doc: https://docs.gradle.org/7.0/userguide/publishing_setup.html#publishing_overview
+afterEvaluate {
+    publishing {
+        //发布的 jar 包配置
+        publications {
+            traceCheetah(MavenPublication) {
+                groupId = group
+                artifactId = project.getName()
+                version = plugin_version
+                from components.java
+            }
+        }
+        //仓库地址配置
+        repositories {
+            maven {
+                // test, upload local maven repository
+                url = "file:" + new File(project.rootProject.rootDir, "asm_test_repo").path
+            }
         }
     }
 }

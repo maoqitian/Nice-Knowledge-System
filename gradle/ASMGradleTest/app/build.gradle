@@ -7,7 +7,7 @@ apply plugin: 'com.mao.asmtest'
 buildscript {
     repositories {
         google()
-        jcenter()
+        mavenCentral()
         //自定义插件maven地址，这里以本地目录作为仓库地址目录
         maven { url '../asm_test_repo' }
     }
@@ -100,3 +100,10 @@ greeting{
 }
 
 apply plugin: TestPlugin
+
+//打印构建打包过程所有task 名称
+gradle.taskGraph.whenReady {
+    it.allTasks.each { task ->
+        println "构建 ${task.name} : ${task.class.name - '_Decorated'}"
+    }
+}
