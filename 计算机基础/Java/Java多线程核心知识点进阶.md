@@ -1053,9 +1053,11 @@ public class ThreadPoolExecutor extends AbstractExecutorService {
         .....
 }
 ```
-
 ![线程池实现原理](https://github.com/maoqitian/MaoMdPhoto/raw/master/Java%E8%99%9A%E6%8B%9F%E6%9C%BA/%E5%A4%9A%E7%BA%BF%E7%A8%8B/%E7%BA%BF%E7%A8%8B%E6%B1%A0/%E7%BA%BF%E7%A8%8B%E6%B1%A0%E6%A0%B8%E5%BF%83%E7%BB%93%E6%9E%84.png)
 
+### 线程池学习参考
+
+- [Java线程池实现原理及其在美团业务中的实践](https://tech.meituan.com/2020/04/02/java-pooling-pratice-in-meituan.html)
 
 ## kotlin 协程
 
