@@ -480,6 +480,105 @@ public static void main(String[] args) {
 
 - 根据前面的分析，Looper.loop()的方法获取不到数据，则会阻塞，这个阻塞和卡死是两回事，阻塞是Linux pipe/epoll机制文件读写的等待，等待及休眠，则会释放占用CPU的资源，而我们开发遇见的卡死一般都是在主线程做了太多耗时操作，Activity 5s，BroadcastReceiver 10s和Service 20s未响应引起的ANR，具体背后分析还请看**Gityuan**的知乎解答[Android中为什么主线程不会因为Looper.loop()里的死循环卡死？](https://www.zhihu.com/question/34652589/answer/90344494?from=profile_answer_card)
 
+## IdleHandler
+
+- 当消息队列中的消息处理完之后，如果有添加执行 IdleHandler 任务则会执行它的 queueIdle 方法
+
+### 如何添加使用
+
+- 获取当前线程 Looper的消息队列进行添加
+
+```
+//主线程添加
+Looper.myQueue().addIdleHandler(object : MessageQueue.IdleHandler{
+            override fun queueIdle(): Boolean {
+
+                Log.e("maoqitian","IdleHandler 任务执行了1")
+
+                return true
+            }
+
+        })
+```
+> 注意 queueIdle 方法的返回值，返回 false 标识只执行一次就移除这个 IdleHandler 任务，返回 true 则保留，下次执行消息循环还会触发
+
+### 源码分析
+
+- MessageQueue 的 next() 方法
+
+```
+ Message next() {
+        ......
+        //注释1
+        int pendingIdleHandlerCount = -1; // -1 only during first iteration
+        ........
+        
+        for (;;) {
+        
+        ........
+            
+            // If first time idle, then get the number of idlers to run.
+                // Idle handles only run if the queue is empty or if the first message
+                // in the queue (possibly a barrier) is due to be handled in the future.
+                 //注释2
+                if (pendingIdleHandlerCount < 0
+                        && (mMessages == null || now < mMessages.when)) {
+                    pendingIdleHandlerCount = mIdleHandlers.size();
+                }
+                if (pendingIdleHandlerCount <= 0) {
+                    // No idle handlers to run.  Loop and wait some more.
+                    mBlocked = true;
+                    continue;
+                }
+
+                if (mPendingIdleHandlers == null) {
+                    mPendingIdleHandlers = new IdleHandler[Math.max(pendingIdleHandlerCount, 4)];
+                }
+                //注释3
+                mPendingIdleHandlers = mIdleHandlers.toArray(mPendingIdleHandlers);
+        }
+        
+            // Run the idle handlers.
+            // We only ever reach this code block during the first iteration.
+            //注释4
+            for (int i = 0; i < pendingIdleHandlerCount; i++) {
+                final IdleHandler idler = mPendingIdleHandlers[i];
+                mPendingIdleHandlers[i] = null; // release the reference to the handler
+
+                boolean keep = false;
+                try {
+                    keep = idler.queueIdle();
+                } catch (Throwable t) {
+                    Log.wtf(TAG, "IdleHandler threw exception", t);
+                }
+
+                if (!keep) {
+                    synchronized (this) {
+                        mIdleHandlers.remove(idler);
+                    }
+                }
+            }
+            //注释5
+             // Reset the idle handler count to 0 so we do not run them again.
+            pendingIdleHandlerCount = 0;
+            //注释6
+            // While calling an idle handler, a new message could have been delivered
+            // so go back and look again for a pending message without waiting.
+            nextPollTimeoutMillis = 0;
+            
+ }
+```
+- 如上源码，逻辑很清晰，注释1 就已经设置 pendingIdleHandlerCount 小于1
+- 注释2 判断单选消息队列消息为空，并且 pendingIdleHandlerCount小于零，则检查集合 mIdleHandlers 的大小赋值给 pendingIdleHandlerCount
+- 注释3 将集合中的 IdleHandler 任务保存到数组中
+- 注释4 遍历 IdleHandler 数组，执行它的 queueIdle 方法，如果queueIdle方法返回 false，则执行完就从集合 mIdleHandlers 中删除，否则继续保存该 IdleHandler 在集合中
+- 注释5 设置 pendingIdleHandlerCount 标志避免重复执行 IdleHandler 任务
+- 注释 6 则 设置 nextPollTimeoutMillis = 0 标识 在调用空闲处理程序时（IdleHandler），可能已经有一个新的消息被送达，所以回去再找一个待处理的消息，不用等待
+
+### IdleHandler 使用场景
+
+- 可以在主线程中做延时加载，当我们需要延时加载任务必须等主线程执行完成才延时加载又不确定设置延时时间多少合适则可以使用 IdleHandler 等待主线程空闲才做延时加载任务
+
 # 参考
 ## 书籍
 - 《Android开发艺术探索》
