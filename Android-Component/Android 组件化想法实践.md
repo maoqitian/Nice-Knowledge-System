@@ -94,7 +94,7 @@ dependencies {
 
 ### 组件间通信
 
-#### 对外暴露服务组件
+#### 对外暴露服务组件（export_component）
 
 - 包含对外暴露服务的接口定义
 - 路由信息常量
@@ -123,7 +123,7 @@ object LiveChannelUtils {
     }
 }
 ```
-#### 业务组件实现暴露服务接口方法
+#### 业务组件（component）实现暴露服务接口方法
 ```
 @Route(path = LiveChannelService.LIVE_CHANNEL_PATH)
 class LiveChannelServiceImpl :LiveChannelService{
