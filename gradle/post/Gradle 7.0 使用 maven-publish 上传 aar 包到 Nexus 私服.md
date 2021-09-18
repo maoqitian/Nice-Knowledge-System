@@ -1,3 +1,4 @@
+# Gradle 7.0 使用 maven-publish 上传 aar 包到 Nexus 私服
 > 在组件化项目架构中每个组件管理我们一般使用分仓库管理，每个组件分别打包成aar包引入项目依赖。老版本 gradle 我们一般使用 maven 插件来上传aar包，而 Gradle 6.x 版本更新了上传插件为 maven-publish
 
 ```
