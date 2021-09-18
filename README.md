@@ -112,6 +112,7 @@ Android 音视频开发学习思路 | [转载地址](https://www.cnblogs.com/ren
 [深入了解 Gradle](https://github.com/maoqitian/Nice-Knowledge-System/blob/master/gradle/post/%E6%B7%B1%E5%85%A5%E4%BA%86%E8%A7%A3%20Gradle.md)| 已完成 | 原创
 [自定义Gradle插件](https://github.com/maoqitian/Nice-Knowledge-System/blob/master/gradle/post/%E8%87%AA%E5%AE%9A%E4%B9%89Gradle%E6%8F%92%E4%BB%B6.md)| 已完成 | 原创
 [Android APT](https://github.com/maoqitian/Nice-Knowledge-System/blob/master/gradle/post/Android%20APT%20%E8%87%AA%E5%8A%A8%E7%94%9F%E6%88%90%E7%B1%BB.md)| 已完成 | 原创
+[Gradle 7.0 使用 maven-publish 上传 aar 包到 Nexus 私服](https://github.com/maoqitian/Nice-Knowledge-System/blob/master/gradle/post/Gradle%207.0%20%E4%BD%BF%E7%94%A8%20maven-publish%20%E4%B8%8A%E4%BC%A0%20aar%20%E5%8C%85%E5%88%B0%20Nexus%20%E7%A7%81%E6%9C%8D.md)| 已完成 | 原创
 
 
 ## Java进阶
