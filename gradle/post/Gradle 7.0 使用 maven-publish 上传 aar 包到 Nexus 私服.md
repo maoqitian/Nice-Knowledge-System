@@ -23,6 +23,28 @@ apply plugin: 'maven-publish'
 
 ## aar 包上传本地仓库
 
+### Gradle 6.0以下 maven 插件
+
+- 直接使用 maven 测试发布在本项目目录中创建本地仓库目录
+
+```
+// maven-upload.gradle
+apply plugin: 'maven'
+
+group='com.mao.testmavenpush'
+version='1.0.0'
+
+uploadArchives {
+    repositories {
+        mavenDeployer {
+            //在本项目目录下创建的Maven仓库设置
+            repository(url: uri('../local_test_repo'))
+        }
+    }
+}
+```
+### Gradle 7.0 maven-publish 插件
+
 - 为了方便测试，我们可以吧 aar 包上传到本地创建的仓库文件夹，如下创建一个 gradle 上传本地脚本 maven-push.gradle，在本地 E 盘创建一个 maventestrepository 本地仓库文件夹
 
 ```
