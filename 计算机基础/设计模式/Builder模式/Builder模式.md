@@ -1,5 +1,5 @@
 # Builder模式
-> Builder 模式将一个复杂的对象与表示分离，使得同样的构建过程可以穿件不同的表示。在 Android Framework 源码中 AlertDialog 的构造，开源网络请求框架 OKHttp 构造中都有用到 Builder 模式。
+> Builder 模式将一个复杂的对象与表示分离，使得同样的构建过程可以创建不同的表示。在 Android Framework 源码中 AlertDialog 的构造，开源网络请求框架 OKHttp 构造中都有用到 Builder 模式。
 
 ## Builder 模式 UML 图
 
@@ -74,7 +74,7 @@ public class MacBookPro extends Computer{
     .....
 }
 ```
-- 在实际开发中 Director 角色经常会被沈略，而直接实现使用 Buidler 来进行对象组装，在 MacBookPro 静态 Buidler 内部类
+- 在实际开发中 Director 角色经常会被省略，而直接实现使用 Buidler 来进行对象组装，在 MacBookPro 静态 Buidler 内部类
 ```
 /**
      * UML图中是作为抽象类 这里直接实现 Builder , 规范 product 创建
