@@ -81,7 +81,7 @@ spring:
   application:
     name: eureka-test
   rabbitmq: # 消息中间件 rabbitmq 配置
-    host: 172.16.112.17
+    host: xxxxx
     port: 5672 # 注意该端口为 amqp 端口 而不是 http 访问端口
     username: admin
     password: Gxxmt    
