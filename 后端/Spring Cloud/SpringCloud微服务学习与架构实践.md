@@ -332,11 +332,11 @@ spring:
     config:
       server:
         git: # git 仓库配置
-          uri: http://172.31.116.11/maoqitian/repo-properties.git
+          uri: xxxxxxx
           search-paths: microservicecloud-config    # 路径名称
           default-label: master  #分支名称
-          username: maoqitian
-          password: maoqitian5124598
+          username: xxxxx
+          password: xxxxxx
           #ignoreLocalSshSettings: true
           #skip-ssl-validation: true
           #hostKey: someHostKey
